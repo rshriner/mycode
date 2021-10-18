@@ -1,4 +1,4 @@
-# mycode (Project Title)
+# mycode (Python Basics Course)
 Alta3's Python basics class
 
 One Paragraph of your project description goes here. Describe what you're trying to do.
