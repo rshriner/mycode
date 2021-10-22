@@ -42,11 +42,7 @@ def main():
 
         #print("Cheater 1 rolled" + str(swapper.get_dice()))
         #print("Cheater 2 rolled" + str(loaded_dice.get_dice()))
-        if sum(swapper.get_dice()) == sum(loaded_dice.get_dice()) or sum(swapper.get_dice()) == sum(trick_dice.get_dice()) or sum(loaded_dice.get_dice()) == sum(trick_dice.get_dice()):
-            #print("Draw!")
-            draw_count+=1
-            pass
-        elif sum(swapper.get_dice()) > sum(loaded_dice.get_dice()) and sum(swapper.get_dice()) > sum(trick_dice.get_dice()):
+        if sum(swapper.get_dice()) > sum(loaded_dice.get_dice()) and sum(swapper.get_dice()) > sum(trick_dice.get_dice()):
             #print("Dice swapper wins!")
             swapper_score+= 1
         elif sum(trick_dice.get_dice()) > sum(swapper.get_dice()) and sum(trick_dice.get_dice()) > sum(loaded_dice.get_dice()):
@@ -55,6 +51,10 @@ def main():
         elif sum(loaded_dice.get_dice()) > sum(trick_dice.get_dice()) and sum(loaded_dice.get_dice()) > sum(swapper.get_dice()):
             #print("Loaded Dice wins!")
             loaded_dice_score+= 1
+        elif sum(swapper.get_dice()) == sum(loaded_dice.get_dice()) or sum(swapper.get_dice()) == sum(trick_dice.get_dice()) or sum(loaded_dice.get_dice()) == sum(trick_dice.get_dice()):
+            #print("Draw!")
+            draw_count+=1
+            pass
         else:
             print("ERROR - SCENARIO UNACCOUNTED")
             print(f"Loaded {loaded_dice.get_dice()}; Trick {trick_dice.get_dice()}; Swapper {swapper.get_dice()}")
